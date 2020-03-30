@@ -25,9 +25,8 @@ import org.dapnet.core.model.validator.EMail;
 import org.dapnet.core.rest.RestAuthorizable;
 
 public class User implements Serializable, RestAuthorizable, Searchable {
-	private static final long serialVersionUID = 8927103398113377284L;
+	private static final long serialVersionUID = 1L;
 
-	// ID
 	@NotNull
 	@Size(min = 3, max = 20)
 	private String name;
