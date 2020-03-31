@@ -26,7 +26,7 @@ import org.dapnet.core.model.validator.ValidName;
 import org.dapnet.core.rest.RestAuthorizable;
 
 public class TransmitterGroup implements Serializable, RestAuthorizable, Searchable {
-	private static final long serialVersionUID = 2641698714366327412L;
+	private static final long serialVersionUID = 1L;
 	private static volatile State state;
 
 	// ID
