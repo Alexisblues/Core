@@ -26,10 +26,9 @@ import javax.validation.constraints.Size;
 import org.dapnet.core.model.validator.ValidName;
 
 public class Call implements Serializable {
-	private static final long serialVersionUID = -2897439698777438292L;
+	private static final long serialVersionUID = 1L;
 	private static volatile State state;
 
-	// No ID
 	@NotNull
 	@Size(min = 1, max = 80)
 	private String text;
