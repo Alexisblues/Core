@@ -29,7 +29,6 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.dapnet.core.model.Searchable;
 import org.dapnet.core.rest.ExclusionStrategies;
 import org.dapnet.core.rest.GsonTypeAdapterFactory;
 import org.dapnet.core.rest.RestAuthorizable;
@@ -158,22 +157,21 @@ public abstract class AbstractResource {
 		}
 	}
 
-	protected Response deleteObject(Searchable object, String methodName, boolean quorumNeeded) throws Exception {
+	protected Response deleteObject(String objectName, String methodName, boolean quorumNeeded) throws Exception {
 		// Check Quorum
 		if (quorumNeeded && !restListener.isQuorum()) {
 			throw new NoQuorumException();
 		}
 
 		// Validation
-		if (object == null) {
-			throw new NotFoundException();
+		if (objectName == null) {
+			throw new NullPointerException("Object name must not be null.");
 		}
 
 		// Send to Cluster
-		if (restListener.handleStateOperation(null, methodName, new Object[] { object.getName() },
+		if (restListener.handleStateOperation(null, methodName, new Object[] { objectName },
 				new Class[] { String.class })) {
-			// TODO Why do we return the deleted object here?
-			return Response.ok(gson.toJson(object)).build();
+			return Response.ok().build();
 		} else {
 			throw new InternalServerErrorException();
 		}

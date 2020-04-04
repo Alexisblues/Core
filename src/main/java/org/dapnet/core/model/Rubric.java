@@ -14,7 +14,6 @@
 
 package org.dapnet.core.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentMap;
@@ -27,7 +26,7 @@ import javax.validation.constraints.Size;
 import org.dapnet.core.model.validator.ValidName;
 import org.dapnet.core.rest.RestAuthorizable;
 
-public class Rubric implements Serializable, RestAuthorizable, Searchable {
+public class Rubric extends NamedEntity implements RestAuthorizable {
 	private static final long serialVersionUID = 1L;
 	private static volatile State state;
 
@@ -77,6 +76,7 @@ public class Rubric implements Serializable, RestAuthorizable, Searchable {
 		return name;
 	}
 
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

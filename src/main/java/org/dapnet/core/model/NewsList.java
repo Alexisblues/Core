@@ -1,6 +1,5 @@
 package org.dapnet.core.model;
 
-import java.io.Serializable;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
@@ -14,7 +13,7 @@ import java.util.function.Consumer;
  * 
  * @author Philipp Thiel
  */
-public class NewsList implements Serializable, Iterable<News> {
+public class NewsList extends Entity implements Iterable<News> {
 
 	private static final long serialVersionUID = 1L;
 	private News[] slots = new News[10];

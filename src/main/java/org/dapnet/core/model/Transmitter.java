@@ -14,7 +14,6 @@
 
 package org.dapnet.core.model;
 
-import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,7 +34,7 @@ import org.dapnet.core.transmission.PagerMessage.FunctionalBits;
 import org.dapnet.core.transmission.PagerMessage.MessagePriority;
 import org.jgroups.stack.IpAddress;
 
-public class Transmitter implements Serializable, RestAuthorizable, Searchable {
+public class Transmitter extends NamedEntity implements RestAuthorizable {
 
 	private static final long serialVersionUID = 1L;
 	private static volatile State state;
@@ -131,6 +130,7 @@ public class Transmitter implements Serializable, RestAuthorizable, Searchable {
 		return name;
 	}
 
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

@@ -14,7 +14,6 @@
 
 package org.dapnet.core.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentMap;
@@ -25,11 +24,10 @@ import javax.validation.constraints.Size;
 import org.dapnet.core.model.validator.ValidName;
 import org.dapnet.core.rest.RestAuthorizable;
 
-public class TransmitterGroup implements Serializable, RestAuthorizable, Searchable {
+public class TransmitterGroup extends NamedEntity implements RestAuthorizable {
 	private static final long serialVersionUID = 1L;
 	private static volatile State state;
 
-	// ID
 	@NotNull
 	@Size(min = 3, max = 20)
 	private String name;
@@ -51,6 +49,7 @@ public class TransmitterGroup implements Serializable, RestAuthorizable, Searcha
 		return name;
 	}
 
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

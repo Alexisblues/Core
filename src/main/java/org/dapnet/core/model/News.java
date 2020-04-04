@@ -14,7 +14,6 @@
 
 package org.dapnet.core.model;
 
-import java.io.Serializable;
 import java.time.Instant;
 
 import javax.validation.constraints.Max;
@@ -24,7 +23,7 @@ import javax.validation.constraints.Size;
 
 import org.dapnet.core.model.validator.ValidName;
 
-public class News implements Serializable {
+public class News extends Entity {
 	private static final long serialVersionUID = 1L;
 	private static volatile State state;
 

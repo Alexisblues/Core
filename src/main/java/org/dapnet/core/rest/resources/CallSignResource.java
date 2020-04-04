@@ -92,6 +92,6 @@ public class CallSignResource extends AbstractResource {
 			checkAuthorization(RestSecurity.SecurityLevel.ADMIN_ONLY);
 		}
 
-		return deleteObject(oldCallSign, "deleteCallSign", true);
+		return deleteObject(oldCallSign.getNormalizedNamed(), "deleteCallSign", true);
 	}
 }
