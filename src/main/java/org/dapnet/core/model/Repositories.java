@@ -16,14 +16,12 @@ public interface Repositories {
 
 	TransmitterGroupRepository getTransmitterGroups();
 
-//	UserRepositoryImpl<TransmitterGroup> getTransmitterGroups();
+	RubricRepository getRubrics();
+
+//	EntityRepository<Call> getCalls();
 //
-//	UserRepositoryImpl<Rubric> getRubrics();
-
-	EntityRepository<Call> getCalls();
-
-	EntityRepository<NewsList> getNewsLists();
-
-	EntityRepository<Pager> getPagers();
+//	EntityRepository<NewsList> getNewsLists();
+//
+//	EntityRepository<Pager> getPagers();
 
 }
