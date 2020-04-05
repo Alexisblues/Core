@@ -16,6 +16,7 @@ package org.dapnet.core.rest.resources;
 
 import java.util.Set;
 
+import javax.inject.Inject;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validation;
@@ -48,10 +49,11 @@ public abstract class AbstractResource {
 
 	protected static final Gson gson;
 	protected static final Gson userGson;
-	// Resources are created with Jersey, cannot pass parameters, so using
-	// instead static attributes
-	protected static volatile RestListener restListener;
-	protected static volatile RestSecurity restSecurity;
+
+	@Inject
+	protected RestListener restListener;
+	@Inject
+	protected RestSecurity restSecurity;
 
 	static {
 		gson = createBuilder().addSerializationExclusionStrategy(ExclusionStrategies.ADMIN).create();
@@ -80,14 +82,6 @@ public abstract class AbstractResource {
 		default:
 			return gson;
 		}
-	}
-
-	public static void setRestListener(RestListener restListenerPar) {
-		restListener = restListenerPar;
-	}
-
-	public static void setRestSecurity(RestSecurity restSecurityPar) {
-		restSecurity = restSecurityPar;
 	}
 
 	// Authorization Helper
