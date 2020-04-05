@@ -6,24 +6,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public final class Repositories {
 
 	private final ReadWriteLock lock = new ReentrantReadWriteLock();
-	private final UserRepository userRepo;
-	private final CallSignRepository callSignRepo;
-	private final TransmitterRepository transmitterRepo;
-	private final NodeRepository nodeRepo;
-	private final TransmitterGroupRepository groupRepo;
-	private final RubricRepository rubricRepo;
-
-	/**
-	 * Creates a new repositories object.
-	 */
-	public Repositories() {
-		userRepo = new UserRepositoryImpl();
-		callSignRepo = new CallSignRepositoryImpl();
-		transmitterRepo = new TransmitterRepositoryImpl();
-		nodeRepo = new NodeRepositoryImpl();
-		groupRepo = new TransmitterGroupRepositoryImpl();
-		rubricRepo = new RubricRepositoryImpl();
-	}
+	private UserRepository userRepo = new UserRepositoryImpl();
+	private CallSignRepository callSignRepo = new CallSignRepositoryImpl();
+	private TransmitterRepository transmitterRepo = new TransmitterRepositoryImpl();
+	private NodeRepository nodeRepo = new NodeRepositoryImpl();
+	private TransmitterGroupRepository groupRepo = new TransmitterGroupRepositoryImpl();
+	private RubricRepository rubricRepo = new RubricRepositoryImpl();
 
 	public ReadWriteLock getLock() {
 		return lock;
