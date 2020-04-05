@@ -1,29 +1,20 @@
 package org.dapnet.core.model;
 
 import java.util.Collection;
-import java.util.Optional;
 
 /**
- * Interface for accessing a named entity repository.
+ * This class implements an entity repository backed by a set.
  * 
  * @author Philipp Thiel
  *
  * @param <T> Entity type
  */
-public interface NamedEntityRepository<T extends NamedEntity> {
-
-	/**
-	 * Gets an entity by its unique name.
-	 * 
-	 * @param name Unique entity name
-	 * @return Entity or empty optional if not found
-	 */
-	Optional<T> getByName(String name);
+public interface EntityRepository<T extends Entity> {
 
 	/**
 	 * Gets a collection of all entities managed by the repository.
 	 * 
-	 * @return Entity collection
+	 * @return Collection of entities
 	 */
 	Collection<T> getAll();
 
@@ -40,5 +31,12 @@ public interface NamedEntityRepository<T extends NamedEntity> {
 	 * @param entity Entity to remove
 	 */
 	void remove(T entity);
+
+	/**
+	 * Gets the number of entities managed by this repository.
+	 * 
+	 * @return Entity count
+	 */
+	long getCount();
 
 }

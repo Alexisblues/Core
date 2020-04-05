@@ -27,7 +27,7 @@ import javax.validation.constraints.Size;
 import org.dapnet.core.model.validator.ValidName;
 import org.jgroups.stack.IpAddress;
 
-public class Node extends NamedEntity {
+public class Node extends Entity {
 	private static final long serialVersionUID = 1L;
 	private static volatile State state;
 
@@ -78,12 +78,10 @@ public class Node extends NamedEntity {
 		this.status = status;
 	}
 
-	@Override
 	public String getName() {
 		return name;
 	}
 
-	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

@@ -23,7 +23,7 @@ import javax.validation.constraints.Size;
 import org.dapnet.core.model.validator.EMail;
 import org.dapnet.core.rest.RestAuthorizable;
 
-public class User extends NamedEntity implements RestAuthorizable {
+public class User extends Entity implements RestAuthorizable {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
@@ -48,12 +48,10 @@ public class User extends NamedEntity implements RestAuthorizable {
 		this.admin = admin;
 	}
 
-	@Override
 	public String getName() {
 		return name;
 	}
 
-	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

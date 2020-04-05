@@ -85,6 +85,8 @@ public class NodeResource extends AbstractResource {
 		}
 
 		checkAuthorization(RestSecurity.SecurityLevel.ADMIN_ONLY);
-		return deleteObject(restListener.getState().getNodes().get(node).getNormalizedNamed(), "deleteNode", true);
+
+		final Node oldNode = restListener.getState().getNodes().get(node);
+		return deleteObject(oldNode.getName(), "deleteNode", true);
 	}
 }

@@ -111,6 +111,6 @@ public class TransmitterResource extends AbstractResource {
 			checkAuthorization(RestSecurity.SecurityLevel.ADMIN_ONLY);
 		}
 
-		return deleteObject(oldTransmitter.getNormalizedNamed(), "deleteTransmitter", true);
+		return deleteObject(oldTransmitter.getName(), "deleteTransmitter", true);
 	}
 }

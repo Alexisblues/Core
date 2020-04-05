@@ -107,6 +107,6 @@ public class UserResource extends AbstractResource {
 			checkAuthorization(RestSecurity.SecurityLevel.ADMIN_ONLY);
 		}
 
-		return deleteObject(oldUser.getNormalizedNamed(), "deleteUser", true);
+		return deleteObject(oldUser.getName(), "deleteUser", true);
 	}
 }

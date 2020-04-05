@@ -25,7 +25,7 @@ import javax.validation.constraints.Size;
 import org.dapnet.core.model.validator.ValidName;
 import org.dapnet.core.rest.RestAuthorizable;
 
-public class CallSign extends NamedEntity implements RestAuthorizable {
+public class CallSign extends Entity implements RestAuthorizable {
 	private static final long serialVersionUID = 1L;
 	private static volatile State state;
 
@@ -49,12 +49,10 @@ public class CallSign extends NamedEntity implements RestAuthorizable {
 	@Size(min = 1, message = "must contain at least one ownerName")
 	private Collection<String> ownerNames;
 
-	@Override
 	public String getName() {
 		return name;
 	}
 
-	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

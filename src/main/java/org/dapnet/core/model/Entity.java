@@ -14,6 +14,25 @@ public abstract class Entity implements Serializable {
 	private Instant lastUpdate;
 
 	/**
+	 * Default constructor.
+	 */
+	protected Entity() {
+	}
+
+	/**
+	 * Constructs a new entity by copying an existing entity.
+	 * 
+	 * @param other Entity to copy from
+	 */
+	protected Entity(Entity other) {
+		if (other == null) {
+			throw new NullPointerException("Other entity must not be null.");
+		}
+
+		lastUpdate = other.lastUpdate;
+	}
+
+	/**
 	 * Gets the last update timestamp.
 	 * 
 	 * @return Last update

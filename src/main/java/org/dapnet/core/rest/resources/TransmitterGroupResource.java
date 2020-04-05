@@ -90,7 +90,7 @@ public class TransmitterGroupResource extends AbstractResource {
 				.get(transmitterGroup);
 		if (oldTransmitterGroup != null) {
 			checkAuthorization(RestSecurity.SecurityLevel.OWNER_ONLY, oldTransmitterGroup);
-			return deleteObject(oldTransmitterGroup.getNormalizedNamed(), "deleteTransmitterGroup", true);
+			return deleteObject(oldTransmitterGroup.getName(), "deleteTransmitterGroup", true);
 		} else {
 			checkAuthorization(RestSecurity.SecurityLevel.ADMIN_ONLY);
 			throw new NotFoundException();

@@ -34,7 +34,7 @@ import org.dapnet.core.transmission.PagerMessage.FunctionalBits;
 import org.dapnet.core.transmission.PagerMessage.MessagePriority;
 import org.jgroups.stack.IpAddress;
 
-public class Transmitter extends NamedEntity implements RestAuthorizable {
+public class Transmitter extends Entity implements RestAuthorizable {
 
 	private static final long serialVersionUID = 1L;
 	private static volatile State state;
@@ -125,12 +125,10 @@ public class Transmitter extends NamedEntity implements RestAuthorizable {
 	private Instant lastConnected;
 	private Instant connectedSince;
 
-	@Override
 	public String getName() {
 		return name;
 	}
 
-	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

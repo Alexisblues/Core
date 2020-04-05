@@ -92,6 +92,6 @@ public class RubricResource extends AbstractResource {
 			checkAuthorization(RestSecurity.SecurityLevel.USER_ONLY);
 		}
 
-		return deleteObject(oldRubric.getNormalizedNamed(), "deleteRubric", true);
+		return deleteObject(oldRubric.getName(), "deleteRubric", true);
 	}
 }
