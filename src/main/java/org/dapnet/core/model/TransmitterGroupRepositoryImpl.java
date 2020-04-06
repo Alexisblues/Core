@@ -11,7 +11,7 @@ import java.util.Optional;
  * 
  * @author Philipp Thiel
  */
-final class TransmitterGroupRepositoryImpl implements TransmitterGroupRepository {
+public final class TransmitterGroupRepositoryImpl implements TransmitterGroupRepository {
 
 	private final Map<String, TransmitterGroup> groups = new HashMap<>();
 

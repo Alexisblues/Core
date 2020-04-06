@@ -11,7 +11,7 @@ import java.util.Optional;
  * 
  * @author Philipp Thiel
  */
-final class RubricRepositoryImpl implements RubricRepository {
+public final class RubricRepositoryImpl implements RubricRepository {
 
 	private final Map<String, Rubric> rubrics = new HashMap<>();
 

@@ -11,7 +11,7 @@ import java.util.Optional;
  * 
  * @author Philipp Thiel
  */
-final class CallSignRepositoryImpl implements CallSignRepository {
+public final class CallSignRepositoryImpl implements CallSignRepository {
 
 	private final Map<String, CallSign> callSigns = new HashMap<>();
 

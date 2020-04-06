@@ -11,7 +11,7 @@ import java.util.Optional;
  * 
  * @author Philipp Thiel
  */
-final class NodeRepositoryImpl implements NodeRepository {
+public final class NodeRepositoryImpl implements NodeRepository {
 
 	private final Map<String, Node> nodes = new HashMap<>();
 

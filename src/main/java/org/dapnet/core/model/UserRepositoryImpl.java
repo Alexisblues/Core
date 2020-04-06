@@ -11,7 +11,7 @@ import java.util.Optional;
  * 
  * @author Philipp Thiel
  */
-final class UserRepositoryImpl implements UserRepository {
+public final class UserRepositoryImpl implements UserRepository {
 
 	private final Map<String, User> users = new HashMap<>();
 

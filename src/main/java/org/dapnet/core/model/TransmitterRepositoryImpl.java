@@ -11,7 +11,7 @@ import java.util.Optional;
  * 
  * @author Philipp Thiel
  */
-final class TransmitterRepositoryImpl implements TransmitterRepository {
+public final class TransmitterRepositoryImpl implements TransmitterRepository {
 
 	private final Map<String, Transmitter> transmitters = new HashMap<>();
 
